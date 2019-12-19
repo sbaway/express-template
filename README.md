@@ -37,7 +37,10 @@ express: v4.16.3
 #### 生产环境部署 NODE 接口
 
 ```bash
-  # 1.上传文件到生产服务器
+  # 0.编译源代码到dist目录
+  npm run build
+
+  # 1.上传dist目录的文件到生产服务器
   rsync -r ./* --exclude node_modules root@207.246.104.207:/apps/***
 
   # 2.安装npm包

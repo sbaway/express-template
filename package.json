@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "express node server",
   "scripts": {
-    "start": "NODE_HOST=0.0.0.0 nodemon --watch src ./src/app.js",
-    "build:": "babel src --out-dir dist"
+    "start": "NODE_HOST=0.0.0.0 nodemon --watch src ./dist/app.js",
+    "build": "babel src --out-dir dist"
   },
   "main": "src/app.js",
   "dependencies": {

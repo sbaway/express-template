@@ -1,0 +1,25 @@
+{
+  "apps": [{
+    "name": "express-server",
+    "script": "src/app.js",
+    "instances": 4,
+    "exec_mode": "cluster",
+    "kill_timeout": 3000,
+    "wait_ready": true,
+    "env": {
+      "NODE_ENV": "production",
+      "NODE_HOST": "0.0.0.0",
+
+      "REDIS_URL": "redis://localhost:6379/0",
+      "REDIS_PREFIX": "rok:session:",
+
+      "MYSQL_HOST": "127.0.0.1",
+      "MYSQL_PORT": "3306",
+      "MYSQL_USER": "root",
+      "MYSQL_PASSWORD": "fuck084614",
+      "MYSQL_DATABASE": "rok",
+
+      "ORIGIN": "http://10.0.1.4:6011"
+    }
+  }]
+}

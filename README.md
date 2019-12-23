@@ -18,15 +18,37 @@ express: v4.16.3
 
 #### 项目结构
 
-```
-- document 文档
----> api.md 接口文档
----> model.sql 建表语句
-- src
----> c c端接口
----> admin 管理端接口
----> app.js 项目入口
-```
+    ├── README.md
+    ├── babel.config.js
+    ├── dist // 线上运行的打包源码
+    ├── document // 文档
+    │   ├── api.md
+    │   └── model.sql
+    ├── src
+    │   ├── app.js // 服务入口
+    │   ├── common // 公用模块
+    │   │   └── errorLog.js
+    │   ├── components // 路由组件
+    │   │   ├── index.js
+    │   │   └── user
+    │   │       └── router.js
+    │   ├── config // 配置
+    │   │   ├── common.js
+    │   │   ├── development.js
+    │   │   ├── index.js
+    │   │   ├── production.js
+    │   │   └── test.js
+    │   ├── const // 常量配置
+    │   │   └── table.js
+    │   ├── express.js
+    │   ├── lib // 工具库
+    │   │   ├── globalFunc.js
+    │   │   ├── globalProp.js
+    │   │   ├── logger.js
+    │   │   └── utils.js
+    │   └── model // 数据库入口
+    │       ├── common.js
+    │       └── database.js
 
 #### 测试账号
 

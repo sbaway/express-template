@@ -1,13 +1,17 @@
 import express from 'express'
 
-import { catchError } from '../../lib/utils'
 const router = express.Router()
 
 // 用户注册
 const handler = {
-  @catchError('getUserInfo')
-  async getUserInfo() {
-    console.e(1)
+  @routerWrap('getUserInfo')
+  async getUserInfo(req, res, next) {
+    const random = Math.random()
+    if (random > 0.5) {
+      throw new Error('用户不存在')
+    } else {
+      return { name: 1 }
+    }
   },
 }
 

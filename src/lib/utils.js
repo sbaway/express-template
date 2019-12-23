@@ -19,21 +19,23 @@ const decrypted = function(encrypted) {
   return CryptoJS.enc.Utf8.stringify(decrypted)
 }
 
-const catchError = apiName => {
+const routerWrap = apiName => {
   return (target, key, descriptor) => {
     const func = descriptor.value
-
     descriptor.value = async (req, res, next) => {
       try {
-        await func(req, res, next)
-      } catch (err) {
-        logger.error(`${apiName}, error info is :%`, err.stack)
-        res.status(200).json({
-          errorMessage: err.message,
-        })
+        const result = await func(req, res, next)
+        return res.status(200).json(pong(result))
+      } catch (error) {
+        logger.error(`${apiName}, info is :%s`, error.stack)
+        res.status(200).json(
+          boom({
+            code: 500,
+            msg: error.message,
+          }),
+        )
       }
     }
-
     return descriptor
   }
 }
@@ -71,8 +73,9 @@ const pong = function(data) {
   }
 
   return new GenerateResponse()
-} // 获取开发环境中局域网的地址
+}
 
+// 获取开发环境中局域网的地址
 const getLocalIp = function() {
   const interfaces = require('os').networkInterfaces()
 
@@ -93,4 +96,4 @@ const getLocalIp = function() {
   return IPAddress
 }
 
-export { encrypted, decrypted, catchError, processPageInfo, boom, pong, getLocalIp }
+export { encrypted, decrypted, routerWrap, processPageInfo, boom, pong, getLocalIp }

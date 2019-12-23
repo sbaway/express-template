@@ -19,7 +19,7 @@ const monitor = expressStatus({
   path: '',
 })
 const host = process.env.NODE_HOST || '0.0.0.0'
-const port = process.env.NODE_PORT || 6011
+const port = process.env.NODE_PORT || 6012
 
 // compress response
 app.use(compression())

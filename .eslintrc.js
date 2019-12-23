@@ -266,6 +266,7 @@ module.exports = {
   },
   globals: {
     logger: true,
+    routerWrap: true,
     development: true,
     test: true,
     production: true,

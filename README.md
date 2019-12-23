@@ -25,30 +25,30 @@ express: v4.16.3
     │   ├── api.md
     │   └── model.sql
     ├── src
-    │   ├── app.js // 服务入口
-    │   ├── common // 公用模块
-    │   │   └── errorLog.js
-    │   ├── components // 路由组件
-    │   │   ├── index.js
-    │   │   └── user
-    │   │       └── router.js
-    │   ├── config // 配置
-    │   │   ├── common.js
-    │   │   ├── development.js
-    │   │   ├── index.js
-    │   │   ├── production.js
-    │   │   └── test.js
-    │   ├── const // 常量配置
-    │   │   └── table.js
-    │   ├── express.js
-    │   ├── lib // 工具库
-    │   │   ├── globalFunc.js
-    │   │   ├── globalProp.js
-    │   │   ├── logger.js
-    │   │   └── utils.js
-    │   └── model // 数据库入口
-    │       ├── common.js
-    │       └── database.js
+        ├── app.js // 服务入口
+        ├── common // 公用模块
+        │   └── errorLog.js
+        ├── components // 路由组件
+        │   ├── index.js
+        │   └── user
+        │       └── router.js
+        ├── config // 配置
+        │   ├── common.js
+        │   ├── development.js
+        │   ├── index.js
+        │   ├── production.js
+        │   └── test.js
+        ├── const // 常量配置
+        │   └── table.js
+        ├── express.js
+        ├── lib // 工具库
+        │   ├── globalFunc.js
+        │   ├── globalProp.js
+        │   ├── logger.js
+        │   └── utils.js
+        └── model // 数据库入口
+            ├── common.js
+            └── database.js
 
 #### 测试账号
 

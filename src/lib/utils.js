@@ -25,8 +25,17 @@ const routerWrap = apiName => {
     descriptor.value = async (req, res, next) => {
       try {
         const result = await func(req, res, next)
+        if (result.clientError) {
+          return res.status(200).json(
+            boom({
+              code: 400,
+              msg: result.clientError,
+            }),
+          )
+        }
         return res.status(200).json(pong(result))
       } catch (error) {
+        console.log(error.clientError)
         logger.error(`${apiName}, info is :%s`, error.stack)
         res.status(200).json(
           boom({

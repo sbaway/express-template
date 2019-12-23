@@ -7,8 +7,12 @@ const handler = {
   @routerWrap('getUserInfo')
   async getUserInfo(req, res, next) {
     const random = Math.random()
-    if (random > 0.5) {
-      throw new Error('用户不存在')
+    if (random < 0.3) {
+      return {
+        clientError: '用户不存在',
+      }
+    } else if (random > 0.3 && random < 0.6) {
+      throw new Error('服务异常')
     } else {
       return { name: 1 }
     }

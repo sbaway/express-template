@@ -54,10 +54,12 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24 * 30,
     },
     saveUninitialized: true,
+    /** TODO session持久化存储
     store: new RedisStore({
       client: new Redis(config.redis.session),
       prefix: config.redis.prefix,
     }),
+     */
   }),
 )
 
